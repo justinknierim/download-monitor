@@ -288,7 +288,7 @@ class DLM_Installer {
 			meta_data longtext NULL,
 			PRIMARY KEY  (ID),
 			KEY attribute_name (ID),
-			KEY cookie_id_meta_key (cookie_id, meta_key (30))
+			KEY cookie_id (cookie_id)
             ) $collate;";
 
 		/**

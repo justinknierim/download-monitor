@@ -107,7 +107,7 @@ class DLM_Upgrade_Manager {
 		// upgrade to version 5.0.30
 		if ( version_compare( $current_version, '5.0.30', '<' ) ) {
 			$wpdb->query( "ALTER TABLE {$wpdb->prefix}dlm_cookies ADD INDEX `hash` (`hash` (25));" );
-			$wpdb->query( "ALTER TABLE {$wpdb->prefix}dlm_cookiemeta ADD INDEX `cookie_id_meta_key` (`cookie_id`, `meta_key` (30));" );
+			$wpdb->query( "ALTER TABLE {$wpdb->prefix}dlm_cookiemeta ADD INDEX `cookie_id` (`cookie_id`);" );
 		}
 
 
