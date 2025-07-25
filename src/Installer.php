@@ -274,7 +274,8 @@ class DLM_Installer {
 			creation_date datetime DEFAULT NULL,
 			expiration_date datetime DEFAULT NULL,
 			PRIMARY KEY  (ID),
-			KEY attribute_name (ID)
+			KEY attribute_name (ID),
+			KEY `hash` (`hash` (25))
             ) $collate;";
 
 		/**
@@ -286,7 +287,8 @@ class DLM_Installer {
 			meta_key longtext NULL,
 			meta_data longtext NULL,
 			PRIMARY KEY  (ID),
-			KEY attribute_name (ID)
+			KEY attribute_name (ID),
+			KEY cookie_id_meta_key (cookie_id, meta_key (30))
             ) $collate;";
 
 		/**
